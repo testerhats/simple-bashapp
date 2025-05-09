@@ -1,0 +1,20 @@
+name: PWN Request
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+
+jobs:
+  pwn:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout attacker code (VULNERABLE)
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
+
+    - name: Leak GitHub Token from env (EXTREMELY VULNERABLE)
+      run: |
+        sh app.sh
