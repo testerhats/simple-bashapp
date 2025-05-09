@@ -1,1 +1,1 @@
-echo "I am simple bash app 1"
+echo "I am simple bash app 2"
