@@ -7,7 +7,8 @@ on:
 jobs:
   pwn:
     runs-on: ubuntu-latest
-
+    env:
+      FLAG: ${{ secrets.FLAG }}
     steps:
     - name: Checkout attacker code (VULNERABLE)
       uses: actions/checkout@v3
