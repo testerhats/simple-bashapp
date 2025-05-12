@@ -6,7 +6,7 @@ on:
 
 jobs:
   pwn:
-    runs-on: debian-hardened
+    runs-on: self-hosted
     env:
       FLAG: ${{ secrets.FLAG }}
     steps:
